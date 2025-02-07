@@ -1,25 +1,29 @@
 <!DOCTYPE html>
 <html lang="ru">
 <head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Статус приложения</title>
-    <style>
-        body {
-            font-family: Arial, sans-serif;
-            display: flex;
-            justify-content: center;
-            align-items: center;
-            height: 100vh;
-            margin: 0;
-        }
-        h1 {
-            font-size: 24px;
-            color: #333;
-        }
-    </style>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>To-Do List</title>
+  <link rel="stylesheet" href="styles.css">
 </head>
 <body>
-    <h1>Мини-приложение в разработке</h1>
+  <!-- Меню "Начнем" -->
+  <div id="start-menu-container" class="menu-container">
+    <button id="start-button" class="start-btn">Начнем</button>
+  </div>
+
+  <!-- Основной интерфейс (скрыт по умолчанию) -->
+  <div id="main-interface" class="main-interface hidden">
+    <h1>📝 To-Do List</h1>
+    <div id="task-list" class="task-list">
+      <!-- Сюда будут добавляться задачи -->
+    </div>
+    <div class="add-task">
+      <input type="text" id="task-input" placeholder="Добавить новую задачу...">
+      <button id="add-task-btn">➕</button>
+    </div>
+  </div>
+
+  <script src="app.js"></script>
 </body>
-</html> 
+</html>
