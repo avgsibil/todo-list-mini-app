@@ -1,102 +1,136 @@
-:root {
-  --primary-color: #0088cc;
-  --background-color: #f0f2f5;
-  --text-color: #2e3338;
+/* Базовые стили */
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+  font-family: 'Segoe UI', sans-serif;
 }
 
 body {
-  margin: 0;
-  padding: 20px;
-  font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Oxygen, Ubuntu, Cantarell, 'Open Sans', 'Helvetica Neue', sans-serif;
-  background-color: var(--background-color);
-  color: var(--text-color);
+  background: #f5f5f5;
+  min-height: 100vh;
 }
 
-#welcome {
+/* Стартовый экран */
+.start-screen {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  height: 100vh;
+  background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+  transition: opacity 0.3s ease;
+}
+
+.start-screen .container {
   text-align: center;
-  padding: 40px 20px;
+  padding: 2rem;
 }
 
-#welcome h1 {
-  font-size: 2.5em;
-  color: var(--primary-color);
+.start-screen h1 {
+  color: white;
+  font-size: 2.5rem;
+  margin-bottom: 2rem;
+  text-shadow: 0 2px 4px rgba(0,0,0,0.1);
 }
 
-.primary-btn {
-  background-color: var(--primary-color);
+/* Кнопка "Начнем" */
+.start-btn {
+  background: white;
+  color: #764ba2;
+  border: none;
+  padding: 1rem 2.5rem;
+  border-radius: 30px;
+  font-size: 1.1rem;
+  cursor: pointer;
+  transition: all 0.3s ease;
+  box-shadow: 0 4px 6px rgba(0,0,0,0.1);
+}
+
+.start-btn:hover {
+  transform: translateY(-2px);
+  box-shadow: 0 6px 12px rgba(0,0,0,0.15);
+}
+
+/* Основной интерфейс */
+.main-interface {
+  padding: 2rem;
+  max-width: 600px;
+  margin: 0 auto;
+}
+
+.container {
+  background: white;
+  border-radius: 15px;
+  padding: 2rem;
+  box-shadow: 0 4px 6px rgba(0,0,0,0.05);
+}
+
+header h1 {
+  color: #2d3748;
+  margin-bottom: 1.5rem;
+  font-size: 1.8rem;
+}
+
+/* Поле ввода */
+.input-group {
+  display: flex;
+  gap: 10px;
+  margin-bottom: 2rem;
+}
+
+#taskInput {
+  flex: 1;
+  padding: 0.8rem;
+  border: 2px solid #e2e8f0;
+  border-radius: 8px;
+  font-size: 1rem;
+  transition: border-color 0.3s ease;
+}
+
+#taskInput:focus {
+  outline: none;
+  border-color: #667eea;
+}
+
+.add-btn {
+  background: #667eea;
   color: white;
   border: none;
-  padding: 12px 24px;
-  border-radius: 8px;
-  font-size: 16px;
+  width: 45px;
+  height: 45px;
+  border-radius: 50%;
+  font-size: 1.5rem;
   cursor: pointer;
-  transition: opacity 0.2s;
+  transition: all 0.3s ease;
 }
 
-.primary-btn:hover {
-  opacity: 0.9;
+.add-btn:hover {
+  background: #764ba2;
+  transform: scale(1.05);
 }
 
-.hidden {
-  display: none !important;
-}
-
-.filters {
+/* Список задач */
+.tasks-list {
   display: flex;
-  gap: 10px;
-  margin: 20px 0;
-}
-
-.filter-btn {
-  background: none;
-  border: 1px solid var(--primary-color);
-  padding: 8px 16px;
-  border-radius: 20px;
-  cursor: pointer;
-}
-
-.filter-btn.active {
-  background: var(--primary-color);
-  color: white;
-}
-
-.task-input-container {
-  display: flex;
-  gap: 10px;
-  margin-bottom: 20px;
-}
-
-#newTask {
-  flex: 1;
-  padding: 12px;
-  border: 1px solid #ddd;
-  border-radius: 8px;
-  font-size: 16px;
+  flex-direction: column;
+  gap: 1rem;
 }
 
 .task-item {
   display: flex;
   align-items: center;
-  padding: 15px;
-  background: white;
+  padding: 1rem;
+  background: #f7fafc;
   border-radius: 8px;
-  margin-bottom: 10px;
-  box-shadow: 0 2px 4px rgba(0,0,0,0.1);
-  gap: 10px;
+  animation: fadeIn 0.3s ease;
 }
 
-.task-item.completed {
-  opacity: 0.7;
+@keyframes fadeIn {
+  from { opacity: 0; transform: translateY(-10px); }
+  to { opacity: 1; transform: translateY(0); }
 }
 
-.task-item.completed span {
-  text-decoration: line-through;
-}
-
-.stats {
-  display: flex;
-  justify-content: space-between;
-  margin-top: 20px;
-  padding-top: 20px;
-  border-top: 1px solid #ddd;
+/* Скрытие элементов */
+.hidden {
+  display: none;
 }
