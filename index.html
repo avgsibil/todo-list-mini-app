@@ -7,28 +7,29 @@
   <link rel="stylesheet" href="styles.css">
 </head>
 <body>
-  <div id="welcome" class="welcome-screen">
-    <h1>To-Do List</h1>
-    <button id="startApp" class="primary-btn">Начнем</button>
+  <!-- Стартовый экран -->
+  <div class="start-screen" id="startScreen">
+    <div class="container">
+      <h1>Добро пожаловать!</h1>
+      <button class="start-btn" id="startBtn">Начнем</button>
+    </div>
   </div>
 
-  <div id="todoApp" class="hidden">
-    <div class="task-input-container">
-      <input type="text" id="newTask" placeholder="Добавить новую задачу...">
-      <button id="addTask" class="primary-btn">➕</button>
-    </div>
+  <!-- Основной интерфейс -->
+  <div class="main-interface hidden" id="mainInterface">
+    <div class="container">
+      <header>
+        <h1>📝 Мои задачи</h1>
+      </header>
+      
+      <div class="input-group">
+        <input type="text" id="taskInput" placeholder="Добавить новую задачу...">
+        <button class="add-btn" id="addBtn">+</button>
+      </div>
 
-    <div class="filters">
-      <button class="filter-btn" data-filter="all">Все</button>
-      <button class="filter-btn" data-filter="active">Активные</button>
-      <button class="filter-btn" data-filter="completed">Завершенные</button>
-    </div>
-
-    <div id="tasksList"></div>
-
-    <div class="stats">
-      <span id="taskCount"></span>
-      <button id="clearCompleted" class="primary-btn">Очистить завершенные</button>
+      <div class="tasks-list" id="tasksList">
+        <!-- Сюда будут добавляться задачи -->
+      </div>
     </div>
   </div>
 
